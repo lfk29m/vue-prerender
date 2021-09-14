@@ -5,21 +5,21 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
-  publicPath: '/vue-prerender/',
-  outputDir: 'docs',
+  publicPath: '/',
+  outputDir: 'dist',
   configureWebpack(config) {
     if (process.env.NODE_ENV === 'production') {
-      // config.plugins.push(
-      //   // 創建實例 (第三步)
-      //   new PrerenderSPAPlugin({
-      //     staticDir: path.join(__dirname, 'docs'),
-      //     // indexPath: path.join(__dirname, 'docs/index.html'),
-      //     routes: ['/vue-prerender', '/vue-prerender/about'],
-      //     renderer: new Renderer({
-      //       renderAfterDocumentEvent: 'render-event',
-      //     }),
-      //   })
-      // );
+      config.plugins.push(
+        // 創建實例 (第三步)
+        new PrerenderSPAPlugin({
+          staticDir: path.join(__dirname, 'dist'),
+          indexPath: path.join(__dirname, 'dist/index.html'),
+          routes: ['/', '/about'],
+          renderer: new Renderer({
+            renderAfterDocumentEvent: 'render-event',
+          }),
+        })
+      );
     }
   },
 };
