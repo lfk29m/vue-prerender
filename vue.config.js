@@ -6,7 +6,7 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
   publicPath: '/vue-prerender/',
-  outputDir: 'docs/vue-prerender/',
+  outputDir: 'docs/vue-prerender',
   assetsDir: './',
   indexPath: './index.html',
   configureWebpack(config) {
