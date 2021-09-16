@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["second"],{"23e0":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("second!!!")])},s=[],l={},o=l,u=t("2877"),r=Object(u["a"])(o,c,s,!1,null,null,null);n["default"]=r.exports}}]);
-//# sourceMappingURL=second.648be33d.js.map
