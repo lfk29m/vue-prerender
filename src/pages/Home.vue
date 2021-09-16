@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <Layout>
-      <div>{{ name }}</div>
-    </Layout>
-    <p>PPPPP</p>
-  </div>
+  <Layout>
+    <div>{{ name }}</div>
+    <router-link :to="{name: 'second'}">second page</router-link>
+  </Layout>
 </template>
 
 <script>
