@@ -5,8 +5,8 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
-  publicPath: '/vue-prerender/',
-  outputDir: 'docs/vue-prerender',
+  publicPath: process.env.NODE_ENV === 'production' ? '/vue-prerender/' : '/',
+  outputDir: 'dist/vue-prerender',
   assetsDir: './',
   indexPath: './index.html',
   configureWebpack(config) {
@@ -14,9 +14,9 @@ module.exports = {
       config.plugins.push(
         // 創建實例 (第三步)
         new PrerenderSPAPlugin({
-          staticDir: path.join(__dirname, 'docs'),
-          indexPath: path.join(__dirname, 'docs/vue-prerender/index.html'),
-          routes: ['/vue-prerender', '/vue-prerender/about'],
+          staticDir: path.join(__dirname, 'dist'),
+          indexPath: path.join(__dirname, 'dist/vue-prerender/index.html'),
+          routes: ['/vue-prerender', '/vue-prerender/home'],
           renderer: new Renderer({
             renderAfterDocumentEvent: 'render-event',
           }),
