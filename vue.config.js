@@ -16,7 +16,11 @@ module.exports = {
         new PrerenderSPAPlugin({
           staticDir: path.join(__dirname, 'dist'),
           indexPath: path.join(__dirname, 'dist/vue-prerender/index.html'),
-          routes: ['/vue-prerender', '/vue-prerender/home'],
+          routes: [
+            '/vue-prerender',
+            '/vue-prerender/home',
+            '/vue-prerender/second',
+          ],
           renderer: new Renderer({
             renderAfterDocumentEvent: 'render-event',
           }),
